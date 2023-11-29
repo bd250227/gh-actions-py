@@ -1,0 +1,18 @@
+name: EDS CI
+
+on:
+  push:
+    branches: [ master, release/* ]
+  pull_request:
+    branches: [ master, release/* ]
+
+# TODO: remove 'inherit' and pass only required secrets to jobs
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "my job"
+        shell: python
+        run: |-
+          my_name = 'Brian'
+          print(f'Hello, {my_name}')
